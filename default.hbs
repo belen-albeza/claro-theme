@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+    {{! document settings }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{! page meta }}
+    <title>{{meta_title}}</title>
+
+    {{! feed, styles, etc. }}
+    <link rel="alternate" title="RSS" href="{{@blog.url}}/rss/" type="application/rss+xml">
+    <link rel="stylesheet" href="{{asset "css/reset.css"}}" type="text/css">
+    <link rel="stylesheet" href="{{asset "css/main.css"}}" type="text/css">
+
+    {{! ghost stuff –don't remove this! }}
+    {{ghost_head}}
+</head>
+
+<body>
+    <header class="main-header">
+        <h1><a href="{{@blog.url}}" title="Index">{{@blog.title}}</a></h1>
+        <nav class="main-menu">{{navigation}}</nav>
+    </header>
+
+    <main>
+    {{{body}}}
+    </main>
+
+    <footer class="main-footer">
+        <p><a href="{{@blog.url}}/rss/" title="Subscribe to RSS updates">RSS</a></p>
+    </footer>
+
+    {{! ghost stuff –don't remove this! }}
+    {{ghost_foot}}
+</body>

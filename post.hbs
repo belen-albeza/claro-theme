@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#post}}
+<article class="{{post_class}}">
+    <header>
+        <h1><a href="{{url}}" title="Permalink">{{title}}</a></h1>
+    </header>
+    {{content}}
+    <footer>
+        <p>
+            <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            {{tags prefix=" on "}}
+        </p>
+    </footer>
+</article>
+{{/post}}

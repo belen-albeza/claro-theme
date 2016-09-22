@@ -1,0 +1,12 @@
+{{#foreach posts}}
+<article class="{{post_class}} looped">
+    <h1 class="post-title"><a href="{{url}}" title="Permalink to: {{title}}">{{title}}</a></h1>
+    <time class="post-timestamp" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+    <p>{{excerpt}} […]</p>
+    <footer><p>
+        <a href="{{url}}" class="post-expand" title="Read full article - {{title}}">Read more</a>
+    </p></footer>
+</article>
+{{/foreach}}
+
+{{pagination}}

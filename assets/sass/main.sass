@@ -1,0 +1,169 @@
+@import "reset.scss"
+
+/* TODO: use fonts locally */
+@import 'https://fonts.googleapis.com/css?family=Cardo|Lato|Oswald'
+
+// -----------------------------------------------------------------------------
+// vars
+// -----------------------------------------------------------------------------
+
+$contrast-color: #ff0051
+$text-color: #444
+$light-text-color: #999
+$darkest-text-color: #000
+$light-bg-color: #eee
+$bg-color: #fff
+
+$max-page-width: 780px
+
+// -----------------------------------------------------------------------------
+// mixins
+// -----------------------------------------------------------------------------
+
+@mixin fancy-text
+    font-family: Oswald, sans-serif
+    text-transform: uppercase
+    font-weight: normal
+    color: $darkest-text-color
+
+// -----------------------------------------------------------------------------
+// generic styles
+// -----------------------------------------------------------------------------
+
+html
+    font-size: 20px
+
+body
+    background: $bg-color
+    color: $text-color
+    font-family: Cardo, serif
+    line-height: 1.5
+
+p, li, h1, h2, h3, h4, h5, h6
+    margin: 1rem 0
+
+h1, h2, h3, h4, h5, h6
+    +fancy-text
+
+a
+    color: $darkest-text-color
+    text-decoration: underline
+    transition: all 0.2s ease-in
+
+a:hover
+    color: $contrast-color
+
+strong
+    color: $darkest-text-color
+    font-weight: bold
+
+h1
+    font-size: 2em
+
+h1 a
+    text-decoration: none
+
+// -----------------------------------------------------------------------------
+// layout
+// -----------------------------------------------------------------------------
+
+main, .main-footer, .main-menu
+    padding: 0 2rem
+
+main
+    margin-top: 3rem
+    width: $max-page-width
+    margin-left: auto
+    margin-right: auto
+
+.main-menu ul
+    display: flex
+    justify-content: flex-start
+    width: $max-page-width
+    margin-left: auto
+    margin-right: auto
+    margin-top: 2rem
+
+.main-menu li
+    flex: 0 0 auto
+    padding: 0.5rem 0
+    margin: 0 0.5rem 0 0.5rem
+
+.main-menu li:first-child
+    margin-left: 0
+
+.main-menu li:last-child
+    margin-right: 0
+
+.main-footer
+    text-align: center
+    margin: 2rem auto 2rem auto
+    width: $max-page-width
+
+// -----------------------------------------------------------------------------
+// header styles
+// -----------------------------------------------------------------------------
+
+.main-menu
+    background: $light-bg-color
+    +fancy-text
+
+.main-menu a
+    text-decoration: none
+
+.main-menu a:hover
+    color: $contrast-color
+
+.main-menu .nav-current
+    box-shadow: inset 0 -0.5rem $darkest-text-color
+
+.main-header
+    font-size: 1.2em
+    padding-top: 2rem
+    text-align: center
+
+.main-header h1
+    margin-top: 0
+    font-size: 3rem
+
+.main-header h1
+    padding-bottom: 0.1em
+    border-bottom: 0.2em solid $contrast-color
+    display: inline-block
+    line-height: 1
+
+.main-header h1 a
+    text-decoration: none
+
+// -----------------------------------------------------------------------------
+// footer styles
+// -----------------------------------------------------------------------------
+
+.main-footer a
+    +fancy-text
+
+// -----------------------------------------------------------------------------
+// post styles
+// -----------------------------------------------------------------------------
+
+.post-timestamp, .post-expand
+    +fancy-text
+
+.post-timestamp
+    color: $light-text-color
+
+.post-title
+    margin-bottom: 0
+
+.pagination
+    background: $light-bg-color
+    padding: 0.5rem 1rem
+    text-align: center
+
+.pagination .page-number
+    padding: 0 2rem
+    &::before, &::after
+        content: " – "
+
+.pagination a
+    +fancy-text

@@ -1,0 +1,29 @@
+{
+  "name": "claro-theme",
+  "description": "Blog theme for Ghost",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belen-albeza/claro-theme.git"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "blog"
+  ],
+  "author": "Belén \"Benko\" Albeza",
+  "license": "MIT",
+  "homepage": "https://github.com/belen-albeza/claro-theme#readme",
+  "bugs": {
+    "url": "https://github.com/belen-albeza/claro-theme/issues"
+  },
+  "version": "1.0.0",
+  "scripts": {
+      "clean": "rimraf assets/css/*.map",
+      "build": "node-sass -i assets/sass/main.sass assets/css/main.css",
+      "dist": "npm run clean && npm run build",
+      "watch": "node-sass -i assets/sass/main.sass assets/css/main.css -w assets/sass/ --source-map assets/css/"
+  },
+  "devDependencies": {
+    "node-sass": "^3.10.0"
+  }
+}
