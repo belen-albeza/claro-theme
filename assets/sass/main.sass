@@ -1,17 +1,17 @@
 @import "reset.scss"
 
 /* TODO: use fonts locally */
-@import 'https://fonts.googleapis.com/css?family=Cardo|Lato|Oswald'
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Lora|Oswald'
 
 // -----------------------------------------------------------------------------
 // vars
 // -----------------------------------------------------------------------------
 
-$contrast-color: #ff0051
+$contrast-color: #ff383f
 $text-color: #444
 $light-text-color: #999
 $darkest-text-color: #000
-$light-bg-color: #eee
+$light-bg-color: rgb(245, 242, 240)
 $bg-color: #fff
 
 $max-page-width: 780px
@@ -36,7 +36,8 @@ html
 body
     background: $bg-color
     color: $text-color
-    font-family: Cardo, serif
+    font-family: 'Source Sans Pro', serif
+    font-weight: 300
     line-height: 1.5
 
 p, li, h1, h2, h3, h4, h5, h6
@@ -49,19 +50,36 @@ a
     color: $darkest-text-color
     text-decoration: underline
     transition: all 0.2s ease-in
+    &:hover
+        color: $contrast-color
 
-a:hover
-    color: $contrast-color
-
-strong
+strong, b
     color: $darkest-text-color
     font-weight: bold
 
+em, i
+    font-style: italic
+
 h1
     font-size: 2em
+    a
+        text-decoration: none
 
-h1 a
-    text-decoration: none
+code
+    font-family: Menlo, monospace
+    font-size: 0.9em
+    background: $light-bg-color
+
+ul
+    list-style-type: disc
+ol
+    list-style-type: decimal
+
+ul, ol
+    padding-left: 1em
+    li
+        padding-left: 1em
+        margin: 0.25rem 0
 
 // -----------------------------------------------------------------------------
 // layout
@@ -83,6 +101,7 @@ main
     margin-left: auto
     margin-right: auto
     margin-top: 2rem
+    list-style-type: none
 
 .main-menu li
     flex: 0 0 auto
@@ -141,16 +160,24 @@ main
 
 .main-footer a
     +fancy-text
+.main-footer
+    font-size: 0.8rem
 
 // -----------------------------------------------------------------------------
 // post styles
 // -----------------------------------------------------------------------------
+
+.post img
+    max-width: 100%
+    display: block
+    margin: 0 auto
 
 .post-timestamp, .post-expand
     +fancy-text
 
 .post-timestamp
     color: $light-text-color
+    margin-top: 0
 
 .post-title
     margin-bottom: 0
@@ -158,7 +185,8 @@ main
 .pagination
     background: $light-bg-color
     padding: 0.5rem 1rem
-    text-align: center
+    display: flex
+    justify-content: space-between
 
 .pagination .page-number
     padding: 0 2rem
@@ -167,3 +195,9 @@ main
 
 .pagination a
     +fancy-text
+    &:hover
+        color: $contrast-color
+
+.pagination .disabled
+    +fancy-text
+    visibility: hidden

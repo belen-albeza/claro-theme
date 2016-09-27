@@ -3,12 +3,12 @@
 {{#post}}
 <article class="{{post_class}}">
     <header>
-        <h1><a href="{{url}}" title="Permalink">{{title}}</a></h1>
+        <h1 class="post-title"><a href="{{url}}" title="Permalink">{{title}}</a></h1>
+        <p class="post-timestamp"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></p>
     </header>
     {{content}}
     <footer>
         <p>
-            <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
             {{tags prefix=" on "}}
         </p>
     </footer>

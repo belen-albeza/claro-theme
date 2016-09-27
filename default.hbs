@@ -9,8 +9,9 @@
 
     {{! feed, styles, etc. }}
     <link rel="alternate" title="RSS" href="{{@blog.url}}/rss/" type="application/rss+xml">
-    <link rel="stylesheet" href="{{asset "css/reset.css"}}" type="text/css">
     <link rel="stylesheet" href="{{asset "css/main.css"}}" type="text/css">
+    {{! remove this if you don't want source code syntax highlighting }}
+    <link rel="stylesheet" href="{{asset "css/prism.css"}}" type="text/css">
 
     {{! ghost stuff –don't remove this! }}
     {{ghost_head}}
@@ -27,9 +28,21 @@
     </main>
 
     <footer class="main-footer">
-        <p><a href="{{@blog.url}}/rss/" title="Subscribe to RSS updates">RSS</a></p>
+        <p><a href="{{@blog.url}}/rss/" title="Subscribe to RSS updates">
+            <img src="{{asset 'images/rss.svg'}}" width="40" height="40" alt="RSS feed">
+        </a></p>
+        <p class="copyright">© 2016 Waka waka. All rights reserved.</p>
     </footer>
 
     {{! ghost stuff –don't remove this! }}
     {{ghost_foot}}
+
+    {{! zepto as a lighter library than jquery }}
+    <script src="{{asset "js/zepto.min.js"}}"></script>
+    {{! source code syntax highlighting with prism - remove if you don't need it }}
+    <script src="{{asset "js/prism.js"}}"></script>
+    {{! video responsive resizing}}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    <script src="{{asset "js/index.js"}}"></script>
 </body>
