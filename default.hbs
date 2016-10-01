@@ -20,7 +20,7 @@
 <body>
     <header class="main-header">
         <h1><a href="{{@blog.url}}" title="Index">{{@blog.title}}</a></h1>
-        <nav class="main-menu">{{navigation}}</nav>
+        {{navigation}}
     </header>
 
     <main>
@@ -29,9 +29,10 @@
 
     <footer class="main-footer">
         <p><a href="{{@blog.url}}/rss/" title="Subscribe to RSS updates">
-            <img src="{{asset 'images/rss.svg'}}" width="40" height="40" alt="RSS feed">
+            <svg width="40" height="40"><use href="{{asset 'images/rss.svg'}}#icon"/></svg>
         </a></p>
-        <p class="copyright">© 2016 Waka waka. All rights reserved.</p>
+        <p class="copyright">© {{date format="YYYY"}} {{@blog.title}}.
+            All rights reserved.</p>
     </footer>
 
     {{! ghost stuff –don't remove this! }}
