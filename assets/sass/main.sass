@@ -207,6 +207,20 @@ main
 .post-title
     margin-bottom: 0
 
+.post-footer
+    text-align: center
+    position: relative
+    padding-top: 0.5rem
+    margin-bottom: 3rem
+    &::before
+        content: ""
+        background: $light-text-color
+        position: absolute
+        top: 0
+        left: 40%
+        height: 1px
+        width: 20%
+
 .pagination
     background: $light-bg-color
     padding: 0.5rem 1rem
