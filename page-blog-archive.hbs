@@ -5,11 +5,12 @@
     <header>
         <h1 class="post-title"><a href="{{url}}" title="Permalink">{{title}}</a></h1>
     </header>
+
     {{content}}
 
     <h2>Featured articles</h2>
 
-    {{#get "posts" fields="title,url" filter="featured:true" limit="all"}}
+    {{#get "posts" filter="featured:true" limit="all"}}
     <ul>
     {{#foreach posts}}
         <li><a href="{{url}}">{{title}}</a></li>
@@ -20,12 +21,12 @@
     <h2>Full article list</h2>
     <p>Sorted by publication date, newer first.</p>
 
-    {{#get "posts" fields="title,url" limit="all"}}
+    {{#get "posts" limit="all"}}
     <ul>
     {{#foreach posts}}
         <li><a href="{{url}}">{{title}}</a></li>
     {{/foreach}}
     </ul>
     {{/get}}
-    </article>
+</article>
 {{/post}}
