@@ -4,7 +4,7 @@
 <article class="{{post_class}}">
     <header>
         <h1 class="post-title"><a href="{{url}}" title="Permalink">{{title}}</a></h1>
-        <p class="post-timestamp"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></p>
+        {{^is "page"}}<p class="post-timestamp"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></p>{{/is}}
     </header>
     {{content}}
     <footer>
